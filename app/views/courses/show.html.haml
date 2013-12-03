@@ -1,0 +1,14 @@
+%h2 Details about #{@course.title}
+
+
+%u1#details
+  %li
+    Course Description:
+    = @course.description
+  %li
+    Created on:
+    = @course.timestamp
+
+=link_to 'back to Course List', course_path
+=button_to 'Delete', course_path(@course), :method => :delete, :confirm => 'Are you sure?'
+
