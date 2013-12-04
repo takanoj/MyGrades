@@ -34,3 +34,4 @@ gem 'haml'
 
 # Deploy with Capistrano
 # gem 'capistrano'
+gem 'strong_parameters' 

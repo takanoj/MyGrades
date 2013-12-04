@@ -2,16 +2,20 @@ class CoursesController < ApplicationController
   def new
   end
 
-
   def show
     id = params[:id]
     @course = Course.find(id)
   end
 
   def create
-    @course = Course.create!(params[:movie])
+    @course = Course.new(course_params)
+    @course.save
     flash[:notice] = "#{@course.title} was successfully created."
-    redirect_to courses_path
+    redirect_to @course
+  end
+
+  def course_params
+      params.require(:course).permit(:title, :description)
   end
 
   def edit
@@ -30,6 +34,10 @@ class CoursesController < ApplicationController
     @course.destroy
     flash[:notice] = "Course '#{@course.title}' deleted."
     redirect_to courses_path
+  end
+
+  def index
+    @courses = Course.all
   end
 
 

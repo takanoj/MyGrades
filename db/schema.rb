@@ -14,17 +14,18 @@
 ActiveRecord::Schema.define(:version => 20131202215540) do
 
   create_table "courses", :force => true do |t|
-    t.string   "course"
+    t.string   "title"
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "distributions", :force => true do |t|
-    t.string   "distribution"
+    t.string   "type"
     t.integer  "weight"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "distribution_location"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
 end
