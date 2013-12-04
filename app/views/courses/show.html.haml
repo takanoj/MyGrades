@@ -1,0 +1,11 @@
+%h2 Details about #{@course.title}
+
+
+%u1#details
+  %li
+    Course Description:
+    = @course.description
+
+= link_to 'back to Course List', courses_path
+= button_to 'Delete', course_path(@course), :method => :delete, :confirm => 'Are you sure?'
+

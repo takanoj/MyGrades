@@ -1,0 +1,11 @@
+%h1 Create New Distribution
+
+= form_tag movies_path do
+
+  = label :distribution, :type, 'Type'
+  = text_field :distribution, 'type'
+
+  = label :distribution, :weight, 'Weight'
+  = text_field :distribution, 'weight'
+
+  = submit_tag 'Submit'

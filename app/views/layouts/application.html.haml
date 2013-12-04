@@ -1,0 +1,18 @@
+!!! 5
+%html
+  %head
+    %title 
+      Courses!
+      = stylesheet_link_tag 'application'
+      = javascript_include_tag 'application'
+      = csrf_meta_tags
+
+  %body
+    %h1.title Instructor Dashboard
+    #main
+      - if flash[:notice]
+        #notice.message=flash[:notice]
+      - elsif flash[:warning]
+        #warnind.message = flash[:warning]
+
+      = yield
