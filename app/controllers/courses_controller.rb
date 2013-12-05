@@ -39,7 +39,6 @@ class CoursesController < ApplicationController
   def destroy
     @course = Course.find(params[:id])
     @course.destroy
-    flash[:notice] = "Course '#{@course.title}' deleted."
     redirect_to courses_path
   end
 
