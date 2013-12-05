@@ -1,0 +1,18 @@
+<p>
+  <strong>Title:</strong>
+  <%= @course.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= @course.description %>
+</p>
+
+<h2>Distributions</h2>
+<%= render @course.distributions %>
+
+<h2>Add a distribution:</h2>
+<%= render "distributions/form" %>
+
+<%= link_to "Course Listings", courses_path %>
+| <%= link_to 'Edit', edit_course_path(@course) %>

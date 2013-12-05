@@ -21,11 +21,13 @@ ActiveRecord::Schema.define(:version => 20131202215540) do
   end
 
   create_table "distributions", :force => true do |t|
-    t.string   "type"
+    t.string   "dist_type"
     t.integer  "weight"
-    t.integer  "distribution_location"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.integer  "course_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
+
+  add_index "distributions", ["course_id"], :name => "index_distributions_on_course_id"
 
 end

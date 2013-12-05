@@ -1,0 +1,16 @@
+<%= form_for([@course, @course.distributions.build]) do |f| %>
+
+  <%#= f.error_messages %>
+
+  <p>
+    <%= f.label "Distribution Type" %><br />
+    <%= f.text_field :dist_type %>
+  </p>
+  <p>
+    <%= f.label "Weight % (integer between 0 and 100)" %><br />
+    <%= f.text_field :weight %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

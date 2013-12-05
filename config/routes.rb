@@ -13,9 +13,10 @@ MyGrades::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :courses, :format => false
-
-  # Sample resource route with options:
+  resources :courses do
+    resources :distributions
+  end
+# Sample resource route with options:
   #   resources :products do
   #     member do
   #       get 'short'

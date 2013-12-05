@@ -1,35 +1,15 @@
 class DistributionsController < ApplicationController
-  def new
-  end
-
   def create
-    @distribution = Distribution.create!(params[:movie])
-    flash[:notice] = "#{@distribution.type} was successfully created."
-    redirect_to distributions_path
-  end
-
-  def edit
-    @distribution = Distribution.find params[:id]
-  end
-
-  def update
-    @distribution = Distribution.find params[:id]
-    @distribution.update_attributes!(params[:distribution])
-    flash[:notice] = "#{@distribution.type} was successfully updated"
-    redirect_to distribution_path(@distribution)
-  end
-
-  def show
-    id = params[:id]
-    @distribution = Distributiion.find(id)
+    @course = Course.find(params[:course_id])
+    @distribution = @course.distributions.create(params[:distribution])
+    redirect_to course_path(@course)
   end
 
   def destroy
-    @distribution = Distribution.find(params[:id])
+    @course = Course.find(params[:course_id])
+    @distribution = @course.distributions.find(params[:id])
     @distribution.destroy
-    flash[:notice] = "Distribution '#{@distribution.type}' deleted"
-    redirect_to distributions_path
+        redirect_to course_path(@course)
   end
-
 
 end

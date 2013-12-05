@@ -1,0 +1,15 @@
+<p>
+  <strong>Distribution Type</strong>
+  <%= distribution.dist_type %>
+</p>
+ 
+<p>
+  <strong>Weight %</strong>
+  <%= distribution.weight %>
+</p>
+
+<p>
+  <%= link_to 'Delete Distribution', [distribution.course, distribution],
+              method: :delete,
+              data: {confirm: 'Are you sure?' } %>
+</p>
