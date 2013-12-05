@@ -2,13 +2,16 @@
   <strong>Title:</strong>
   <%= @course.title %>
 </p>
- 
+
 <p>
   <strong>Description:</strong>
   <%= @course.description %>
 </p>
 
-<h2>Distributions</h2>
+<%= link_to "Edit Course Title or Description", edit_course_path(@course) %>
+
+
+<h2>Distributions:</h2>
 <%= render @course.distributions %>
 
 <h2>Add a distribution:</h2>
