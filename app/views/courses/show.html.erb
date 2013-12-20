@@ -14,6 +14,20 @@
 <h2>Distributions:</h2>
 <%= render @course.distributions %>
 
+<%= form_for :course, url: courses_path do |f| %>
+  <% if @course.errors.any? %>
+  <div id="error_explination">
+    <h2><%= pluralize(@course.errors.count, "error") %> prohibited
+     this distribution from being saved: </h2>
+    </ul>
+    <% @course.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+<% end %>
+
 <h2>Add a distribution:</h2>
 <%= render "distributions/form" %>
 

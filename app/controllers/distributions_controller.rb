@@ -6,7 +6,12 @@ class DistributionsController < ApplicationController
   def create
     @course = Course.find(params[:course_id])
     @distribution = @course.distributions.create(params[:distribution])
-    redirect_to course_path(@course)
+
+    if @distribution.save
+      redirect_to course_path(@course)
+    else
+      redirect_to course_path(@course)
+    end
   end
 
   def destroy
@@ -15,5 +20,10 @@ class DistributionsController < ApplicationController
     @distribution.destroy
         redirect_to course_path(@course)
   end
+
+  def new
+    @distribution = Distribution.new
+  end
+
 
 end
