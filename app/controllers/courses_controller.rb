@@ -1,4 +1,9 @@
 class CoursesController < ApplicationController
+
+    http_basic_authenticate_with name: 'teacher', password: 'secret',
+  except: [:index, :show]
+
+
   def new
     @course = Course.new
   end
